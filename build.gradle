@@ -3,3 +3,9 @@ plugins {
     id 'com.android.application' version '8.0.2' apply false
     id 'com.android.library' version '8.0.2' apply false
 }
+
+ext {
+    COMPILE_SDK_VERSION = 33
+    MIN_SDK_VERSION = 21
+    TARGET_SDK_VERSION = 33
+}

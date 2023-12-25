@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.sq.futuralsdkdemo'
-    compileSdk 33
+    compileSdk COMPILE_SDK_VERSION
 
     defaultConfig {
         applicationId "com.sq.futuralsdkdemo"
-        minSdk 21
-        targetSdk 33
+        minSdk MIN_SDK_VERSION
+        targetSdk TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
 
