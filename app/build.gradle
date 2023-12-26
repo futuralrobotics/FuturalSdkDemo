@@ -11,7 +11,7 @@ android {
         minSdk MIN_SDK_VERSION
         targetSdk TARGET_SDK_VERSION
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,6 +25,39 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def version = "v${versionName}"
+            def apkName = "FuturalSdkDemo"
+            apkName += "_" + variant.buildType.name
+            def fileName = "${apkName}_${version}.apk"
+            outputFileName = fileName
+        }
+
+        File desFilePath = new File("${rootDir}/output")
+
+        variant.assembleProvider.configure {
+            it.doLast {
+                variant.outputs.all {
+                    try {
+                        //判断文件夹是否存在
+                        if (!desFilePath.exists()) {
+                            desFilePath.mkdir()
+                        }
+                        //将编译好的apk 复制到output目录
+                        copy {
+                            from outputFile
+                            into desFilePath
+                            include '**/*.apk'
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace()
+                    }
+                }
+            }
+        }
     }
 }
 
