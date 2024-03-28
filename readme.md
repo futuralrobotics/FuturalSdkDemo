@@ -1,3 +1,5 @@
+<a href="./readme.md">English</a>  <a href="./readme_zh_cn.md">中文</a>
+
 ### SDK usage instructions
 1. Import aar files and dependent projects
     ![](./images/01.png)

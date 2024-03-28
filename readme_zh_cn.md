@@ -1,3 +1,5 @@
+<a href="./readme.md">English</a>  <a href="./readme_zh_cn.md">中文</a>
+
 ### SDK使用说明
 1. 导入aar文件及依赖的项目
    ![](./images/01.png)
